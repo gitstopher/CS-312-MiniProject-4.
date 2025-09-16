@@ -1,0 +1,41 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  background: #3f3fa7;
+}
+h1, h2 {
+  text-align: center;
+}
+.post-form, .post {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 15px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+input, textarea {
+  width: 95%;
+  padding: 8px;
+  margin: 5px 0;
+}
+button {
+  padding: 6px 12px;
+  border: none;
+  background: #007bff;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+
+}
+button:hover {
+  background: #0056b3;
+}
+.post {
+  margin-bottom: 20px;
+}
+.post small {
+  display: block;
+  margin-top: 5px;
+  color: gray;
+}
