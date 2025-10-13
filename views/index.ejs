@@ -8,12 +8,20 @@
 <body>
   <h1>Kris' Mini Blog App</h1>
 
+  <%if (user) { %>
+    <p>Welcome, <strong><%= user.name %></strong>!</p>
+    <form action="/logout" method="GET" style="display:inline;">
+        <button type="submit">Logout</button>
+    </form>
+
 <form action="/add" method="POST" class="post-form">
-    <input type="text" name="author" placeholder="Your Name" required>
     <input type="text" name="title" placeholder="Post Title" required>
     <textarea name="content" placeholder="Write your post..." required></textarea>
     <button type="submit">Add Post</button>
 </form>
+<% } else { %>
+    <p><a href="/signin">Sign in</a> or <a href="/signup">Sign up</a> to add a new post.</p>
+<% } %>
 
 <h2>All Posts</h2>
 <div class="posts">
@@ -23,16 +31,21 @@
     <% posts.forEach(post => { %>
     <div class="post">
         <h3><%= post.title %></h3>
-    <p><%= post.content %></p>
-    <small>By <%= post.author %> on <%= post.createdAt %></small>
+    <p><%= post.body %></p>
+    <small>By <%= post.creator_name %> on 
+        <%= new Date(post.date_created).toLocaleString() %>
+    </small><br>
 
-    <a href="/edit/<%= post.id %>">Edit</a>
-    <form action="delete/<%= post.id %>" method="POST" style="display:inline;">
-        <button type="submit">Delete</button>
-    </form>
+    <% if (user && user.user_id == post.creator_user_id) { %>
+        <a href="/edit/<%= post.blog_id %>">Edit</a>
+        <form action="/delete/<%= post.blog_id %>" method="POST" style="display:inline;">
+            <button type="submit">Delete</button>
+        </form>
+      <% } %>
     </div>
-<% }) %>
-<% } %>
+    <hr>
+    <% }) %>
+    <% } %>
 </div>
 </body>
 </html>

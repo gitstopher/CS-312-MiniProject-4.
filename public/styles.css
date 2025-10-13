@@ -1,7 +1,7 @@
 body {
   font-family: Arial, sans-serif;
   margin: 20px;
-  background: #3f3fa7;
+  background: #3de4db;
 }
 h1, h2 {
   text-align: center;
@@ -29,7 +29,7 @@ button {
 
 }
 button:hover {
-  background: #0056b3;
+  background: #130f35;
 }
 .post {
   margin-bottom: 20px;
