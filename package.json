@@ -1,16 +1,18 @@
 {
   "dependencies": {
     "body-parser": "^2.2.0",
-    "express": "^5.1.0",
-    "pg": "^8.11.0",
-    "express-session": "^1.17.4",
     "connect-flash": "^0.1.1",
-    "ejs": "^3.1.10"
+    "cors": "^2.8.5",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "express-session": "^1.17.4",
+    "pg": "^8.11.0"
   },
   "name": "blog-project",
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
